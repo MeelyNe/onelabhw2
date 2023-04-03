@@ -1,4 +1,4 @@
-package app
+package app //nolint:typecheck
 
 import (
 	"context"
@@ -54,8 +54,6 @@ func Run() {
 	l.Info("app started")
 
 	e := NewServer()
-
-	// repostiory
 
 	userRepo := repository.NewUserRepository(l)
 	routes.NewUser(userRepo, l).Register(e)

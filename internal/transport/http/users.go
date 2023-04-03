@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"onelab2/internal/model"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 	"go.uber.org/zap"
 )
 
