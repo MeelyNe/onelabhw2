@@ -1,8 +1,14 @@
 run:
+	docker compose up
+	docker compose --profile tools run --rm migrate up
+
+run_local:
 	go run cmd/main.go
 
-docker-rm:
-	docker rm onelabhw2-app
-	docker image rm onelabhw2-app
+local_migration_up:
+	migrate -path db/migrations -database "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" -verbose up
 
-.PHONY: run docker-rm
+local_migration_down:
+	migrate -path db/migrations -database "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable" -verbose down
+
+.PHONY: run
