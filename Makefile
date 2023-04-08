@@ -1,6 +1,7 @@
 run:
+
+	docker compose --profile tools run --rm migrate up &
 	docker compose up
-	docker compose --profile tools run --rm migrate up
 
 run_local:
 	go run cmd/main.go
