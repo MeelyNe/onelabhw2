@@ -11,7 +11,6 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"go.uber.org/zap"
@@ -21,15 +20,15 @@ const (
 	ctxTimeout = 10 * time.Second
 )
 
-func prepareEnv() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
-}
+//func prepareEnv() {
+//	err := godotenv.Load()
+//	if err != nil {
+//		panic(err)
+//	}
+//}
 
 func Run() {
-	prepareEnv()
+	//prepareEnv()
 	cfg, err := config.New()
 	if err != nil {
 		panic(err)
